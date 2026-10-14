@@ -1,0 +1,222 @@
+/* ============================================================================
+   Ariff · "Courtside" theme
+   ----------------------------------------------------------------------------
+   A portal-specific skin for the Ariff frontend (Customer Booking & Checkout
+   Portal). It is loaded only when Ariff/app.php defines APP_THEME = 'ariff',
+   and layers on top of the shared role theme (customer / organiser / admin /
+   auth). Other members' portals never load this file.
+
+   Palette: midnight navy + volt lime — deliberately different from the shared
+   customer (emerald), organiser (amber) and admin (slate-blue) themes.
+   ============================================================================ */
+
+body.app-ariff {
+  --bg: #eef2f7;
+  --surface: #ffffff;
+  --ink: #0b1220;
+  --muted: #5b6b82;
+  --line: #dae2ee;
+  --primary: #0f172a;
+  --primary-ink: #f8fafc;
+  --radius: 8px;
+  --accent: #a3e635;
+  --accent-ink: #1a2e05;
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #eef2f7;
+}
+
+/* ---- Brand mark ---- */
+body.app-ariff .brand { background: transparent; box-shadow: none; letter-spacing: .08em; }
+body.app-ariff .brand-plus { color: var(--accent); }
+
+/* ---- Customer header: full-width dark bar with volt underline ---- */
+body.app-ariff .pillbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 0;
+  background: linear-gradient(120deg, #0b1220, #14264a);
+  border-bottom: 3px solid var(--accent);
+}
+body.app-ariff .pillbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 13px 22px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.app-ariff .pillbar nav { display: flex; gap: 4px; flex: 1; flex-wrap: wrap; }
+body.app-ariff .pill { padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; color: #cbd5e1; }
+body.app-ariff .pill:hover { background: #1e293b; color: #fff; }
+body.app-ariff .pill.active { background: var(--accent); color: var(--accent-ink); }
+body.app-ariff .pill.ghost { color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+body.app-ariff .pill.ghost:hover { background: var(--accent); color: var(--accent-ink); }
+body.app-ariff .pill.solid { background: var(--accent); color: var(--accent-ink); }
+body.app-ariff .pill-user { display: flex; gap: 6px; }
+
+/* ---- Page stage + hero title band ---- */
+body.app-ariff .stage { max-width: 1180px; margin: 0 auto; padding: 26px 20px 60px; }
+body.app-ariff .stage-head {
+  position: relative;
+  margin: 0 0 26px;
+  padding: 26px 28px 28px;
+  overflow: hidden;
+  border-radius: 14px;
+  border-left: 6px solid var(--accent);
+  background: linear-gradient(120deg, #0b1220 0%, #15294a 100%);
+  box-shadow: 0 18px 40px rgba(11, 18, 32, .18);
+}
+body.app-ariff .stage-head::after {
+  content: "";
+  position: absolute;
+  right: -46px;
+  top: -46px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  border: 2px dashed rgba(163, 230, 53, .35);
+}
+body.app-ariff .stage-head h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+body.app-ariff .stage-head p { margin: 6px 0 0; color: #d9f99d; font-size: 1rem; font-weight: 600; }
+
+/* ---- Cards, stats, tables ---- */
+body.app-ariff .card,
+body.app-ariff .stat,
+body.app-ariff .table-wrap {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(11, 18, 32, .06);
+}
+body.app-ariff .card { border-top: 3px solid var(--accent); }
+body.app-ariff .stat { border-top: 3px solid #0f172a; }
+body.app-ariff .stat strong { color: #0f172a; }
+body.app-ariff .stat.warn { border-top-color: #f59e0b; }
+body.app-ariff .stat.good { border-top-color: #65a30d; }
+body.app-ariff .stat.bad { border-top-color: #dc2626; }
+body.app-ariff th { background: #0f172a; color: #cbd5e1; }
+body.app-ariff tbody tr:hover { background: #f6f9ff; }
+body.app-ariff td code { background: #eef2f7; }
+
+/* ---- Buttons and inputs ---- */
+body.app-ariff .btn {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  background: #0f172a;
+  color: #fff;
+}
+body.app-ariff .btn:hover { filter: brightness(1.2); }
+body.app-ariff .btn.sm { padding: 6px 14px; }
+body.app-ariff .btn.ghost { background: transparent; color: #0f172a; box-shadow: inset 0 0 0 1.5px #0f172a; }
+body.app-ariff .btn.good { background: #65a30d; color: #fff; }
+body.app-ariff .btn.danger { background: #dc2626; color: #fff; }
+
+body.app-ariff input,
+body.app-ariff select,
+body.app-ariff textarea { border-radius: 8px; border: 1.5px solid #cbd5e1; }
+body.app-ariff input:focus,
+body.app-ariff select:focus,
+body.app-ariff textarea:focus {
+  border-color: #65a30d;
+  box-shadow: 0 0 0 3px rgba(101, 163, 13, .22);
+}
+
+/* ---- Event / venue cards ---- */
+body.app-ariff .event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px; }
+body.app-ariff .event-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(11, 18, 32, .08);
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+body.app-ariff .event-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 16px 32px rgba(11, 18, 32, .16); }
+body.app-ariff .event-cover {
+  height: 104px;
+  padding: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: #fff;
+  font-weight: 800;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #0b1220, #1e3a5f);
+  border-bottom: 3px solid var(--accent);
+}
+body.app-ariff .event-cover.pickleball { background: linear-gradient(120deg, #312e81, #6d28d9); }
+body.app-ariff .event-cover.futsal { background: linear-gradient(120deg, #052e16, #15803d); }
+body.app-ariff .event-cover.badminton { background: linear-gradient(120deg, #431407, #c2410c); }
+body.app-ariff .event-body { padding: 16px 18px 20px; display: grid; gap: 8px; flex: 1; align-content: start; }
+body.app-ariff .event-body h3 { margin: 0; font-size: 1.1rem; }
+body.app-ariff .price { color: #0f172a; font-size: 1.2rem; font-weight: 800; }
+
+/* ---- E-ticket (booking.php / verify.php) ---- */
+body.app-ariff .ticket {
+  grid-template-columns: 1fr 250px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(11, 18, 32, .16);
+}
+body.app-ariff .ticket-main { background: linear-gradient(120deg, #0b1220, #15294a); color: #fff; }
+body.app-ariff .ticket-label { color: var(--accent); }
+body.app-ariff .ticket-main h2 { color: #fff; }
+body.app-ariff .ticket-main p { color: #cbd5e1; }
+body.app-ariff .ticket-main dt { color: #94a3b8; }
+body.app-ariff .ticket-main dd { color: #fff; }
+body.app-ariff .ticket-qr { background: #f8fafc; border-left: 3px dashed #0f172a; }
+body.app-ariff .ticket-qr code {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #0f172a;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---- Footer ---- */
+body.app-ariff .site-foot { background: #0b1220; color: var(--accent); font-weight: 700; letter-spacing: .04em; }
+
+/* ---- Login / auth pages ---- */
+body.app-ariff .auth-art {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(163, 230, 53, .28), transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(30, 58, 138, .45), transparent 45%),
+    #0b1220;
+}
+body.app-ariff .auth-art h2 { color: #fff; text-transform: uppercase; letter-spacing: .02em; }
+body.app-ariff .auth-art li { border-color: rgba(163, 230, 53, .55); color: #d9f99d; }
+body.app-ariff .auth-panel { background: #eef2f7; }
+body.app-ariff .auth-card { border-top: 4px solid var(--accent); border-radius: 14px; box-shadow: 0 20px 50px rgba(11, 18, 32, .18); }
+body.app-ariff .demo-note { background: #f7fee7; color: #3f6212; }
+
+/* ---- Coherence for admin / organiser views inside the Ariff portal ---- */
+body.app-ariff .topnav { background: #0b1220; }
+body.app-ariff .banner { background: linear-gradient(120deg, #15294a, #0b1220); }
+body.app-ariff .banner small { color: #d9f99d; }
+body.app-ariff .banner p { color: #cbd5e1; }
+body.app-ariff .sidebar { background: #0b1220; }
+body.app-ariff .app-tag { background: rgba(163, 230, 53, .18); color: #3f6212; }
+
+@media (max-width: 720px) {
+  body.app-ariff .stage-head h1 { font-size: 1.5rem; }
+  body.app-ariff .ticket { grid-template-columns: 1fr; }
+  body.app-ariff .ticket-qr { border-left: 0; border-top: 3px dashed #0f172a; }
+}

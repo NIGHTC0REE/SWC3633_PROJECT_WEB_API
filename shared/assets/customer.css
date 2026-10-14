@@ -1,0 +1,49 @@
+body.theme-customer {
+  --bg: #ecfdf5;
+  --primary: #059669;
+  --line: #d1fae5;
+  --radius: 18px;
+  background: linear-gradient(180deg, #d1fae5 0, #ecfdf5 340px, #f8fffb 100%) fixed;
+  font-size: 15.5px;
+}
+
+.theme-customer .pillbar { padding: 16px 20px 0; }
+.theme-customer .pillbar-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 10px 14px; background: #fff; border-radius: 999px; box-shadow: 0 8px 28px rgba(5, 150, 105, .16); }
+.theme-customer .pillbar nav { display: flex; gap: 6px; flex: 1; flex-wrap: wrap; }
+.theme-customer .pill { padding: 8px 18px; border-radius: 999px; text-decoration: none; font-weight: 700; color: #065f46; }
+.theme-customer .pill:hover { background: #d1fae5; }
+.theme-customer .pill.active { background: #059669; color: #fff; }
+.theme-customer .pill-user { display: flex; gap: 6px; }
+.theme-customer .pill.solid { background: #064e3b; color: #fff; }
+
+.theme-customer .stage { max-width: 1120px; margin: 0 auto; padding: 34px 20px 50px; }
+.theme-customer .stage-head { margin-bottom: 26px; }
+.theme-customer .stage-head h1 { font-size: 2.3rem; color: #064e3b; }
+.theme-customer .stage-head p { margin: 0; color: #047857; font-size: 1.05rem; }
+
+.theme-customer .card, .theme-customer .stat, .theme-customer .table-wrap { border-radius: 22px; box-shadow: 0 10px 30px rgba(6, 78, 59, .08); }
+.theme-customer .stat strong { color: #047857; }
+.theme-customer .btn { border-radius: 999px; padding: 11px 24px; }
+.theme-customer .btn.sm { padding: 6px 15px; }
+.theme-customer input, .theme-customer select, .theme-customer textarea { border-radius: 14px; border-color: #a7f3d0; }
+.theme-customer th { color: #047857; background: #f0fdf9; }
+
+.theme-customer .event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; margin-bottom: 24px; }
+.theme-customer .event-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(6, 78, 59, .1); display: flex; flex-direction: column; transition: transform .2s; }
+.theme-customer .event-card:hover { transform: translateY(-4px); }
+.theme-customer .event-cover { height: 110px; padding: 14px; display: flex; align-items: flex-end; justify-content: space-between; color: #fff; font-weight: 800; }
+.theme-customer .event-cover.pickleball { background: linear-gradient(135deg, #7c3aed, #c084fc); }
+.theme-customer .event-cover.futsal { background: linear-gradient(135deg, #059669, #34d399); }
+.theme-customer .event-cover.badminton { background: linear-gradient(135deg, #ea580c, #fbbf24); }
+.theme-customer .event-body { padding: 18px 20px 22px; display: grid; gap: 8px; flex: 1; align-content: start; }
+.theme-customer .event-body h3 { margin: 0; font-size: 1.15rem; }
+.theme-customer .event-meta { color: var(--muted); font-size: .9rem; }
+.theme-customer .event-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+.theme-customer .price { font-size: 1.25rem; font-weight: 800; color: #047857; }
+
+.theme-customer .site-foot { text-align: center; padding: 26px; color: #047857; font-weight: 600; }
+
+@media (max-width: 720px) {
+  .theme-customer .pillbar-inner { border-radius: 26px; }
+  .theme-customer .stage-head h1 { font-size: 1.7rem; }
+}

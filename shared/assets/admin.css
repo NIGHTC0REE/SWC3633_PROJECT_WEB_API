@@ -1,0 +1,51 @@
+body.theme-admin {
+  --bg: #eef1f6;
+  --primary: #2563eb;
+  --radius: 6px;
+  font-size: 14px;
+}
+
+.theme-admin .shell { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+
+.theme-admin .sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 16px;
+  background: #0f172a;
+  color: #cbd5e1;
+}
+.theme-admin .side-label { margin: 22px 10px 4px; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #64748b; }
+.theme-admin .sidebar nav { display: grid; gap: 2px; }
+.theme-admin .sidebar nav a { padding: 10px 12px; border-radius: 6px; color: #cbd5e1; text-decoration: none; font-weight: 500; border-left: 3px solid transparent; }
+.theme-admin .sidebar nav a:hover { background: #1e293b; }
+.theme-admin .sidebar nav a.active { background: #1e3a8a; color: #fff; border-left-color: #60a5fa; }
+.theme-admin .side-user { margin-top: auto; padding: 14px; background: #1e293b; border-radius: 8px; display: grid; gap: 2px; }
+.theme-admin .side-user strong { color: #fff; }
+.theme-admin .side-user small { color: #94a3b8; }
+.theme-admin .side-user a { margin-top: 8px; color: #93c5fd; font-weight: 600; text-decoration: none; }
+
+.theme-admin .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 32px; background: #fff; border-bottom: 1px solid #dbe1ea; }
+.theme-admin .topbar h1 { font-size: 1.35rem; margin: 0; }
+.theme-admin .topbar p { margin: 2px 0 0; color: var(--muted); }
+.theme-admin .app-tag { padding: 4px 12px; border-radius: 4px; background: #e0e7ff; color: #3730a3; font-weight: 700; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; }
+.theme-admin .page { padding: 26px 32px; }
+
+.theme-admin .card, .theme-admin .stat, .theme-admin .table-wrap { border: 1px solid #dbe1ea; box-shadow: none; }
+.theme-admin .stat { border-top: 3px solid var(--primary); }
+.theme-admin .stat.warn { border-top-color: #f59e0b; }
+.theme-admin .stat.good { border-top-color: #16a34a; }
+.theme-admin .stat.bad { border-top-color: #dc2626; }
+.theme-admin th { background: #f8fafc; }
+.theme-admin tbody tr:hover { background: #f8fafc; }
+.theme-admin .btn { border-radius: 5px; }
+
+@media (max-width: 860px) {
+  .theme-admin .shell { grid-template-columns: 1fr; }
+  .theme-admin .sidebar { position: static; height: auto; }
+  .theme-admin .side-user { margin-top: 12px; }
+  .theme-admin .page, .theme-admin .topbar { padding: 16px; }
+}

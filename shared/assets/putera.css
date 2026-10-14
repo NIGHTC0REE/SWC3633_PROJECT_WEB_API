@@ -1,0 +1,78 @@
+/* Putera Aidil – Customer Account & Ticketing Portal
+   Scoped to body.pa (class added by app.php) so no other member's portal is affected.
+   Loaded after base/customer/auth.css, so it overrides them. */
+body.pa{
+  --bg:#f3f5fb; --surface:#fff; --ink:#14213d; --muted:#5b6785; --line:#d8deee;
+  --primary:#3a5bff; --primary-ink:#fff; --radius:4px;
+  --good:#14804a; --warn:#a15c00; --bad:#b3261e; --accent:#ffd23f;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg); font-size:15px;
+}
+body.pa h1, body.pa h2, body.pa h3{font-family:Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.01em}
+body.pa :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* brand mark: navy block + yellow plus (replaces black/orange BOOM+) */
+body.pa .brand{background:var(--ink);border-radius:var(--radius)}
+body.pa .brand-plus{color:var(--accent)}
+
+/* top bar: full-width navy strip with underline tabs instead of floating green pills */
+body.pa .pillbar{padding:0;background:var(--ink);position:sticky;top:0;z-index:5}
+body.pa .pillbar-inner{max-width:1180px;border-radius:0;background:transparent;box-shadow:none;padding:10px 20px;gap:22px}
+body.pa .pill{border-radius:0;padding:10px 4px;color:#c9d3f0;font-weight:600;border-bottom:3px solid transparent}
+body.pa .pill:hover{background:transparent;color:#fff}
+body.pa .pill.active{background:transparent;color:#fff;border-bottom-color:var(--accent)}
+body.pa .pillbar nav{gap:20px}
+body.pa .pill.solid{background:var(--accent);color:var(--ink);padding:8px 16px;border:0;border-radius:var(--radius)}
+
+/* page heading: left aligned with a yellow marker, no gradient wash */
+body.pa.theme-customer{background:var(--bg)}
+body.pa .stage{max-width:1180px;padding:30px 20px 56px}
+body.pa .stage-head{border-left:8px solid var(--accent);padding-left:16px}
+body.pa .stage-head h1{font-size:2rem;color:var(--ink)}
+body.pa .stage-head p{color:var(--muted);font-size:1rem}
+
+/* surfaces: flat, bordered, small radius */
+body.pa .card, body.pa .stat, body.pa .table-wrap, body.pa .empty{border:1px solid var(--line);border-radius:var(--radius);box-shadow:none}
+body.pa .stat{border-top:4px solid var(--primary)}
+body.pa .stat strong{color:var(--ink)}
+body.pa .stat.good{border-top-color:var(--good)} body.pa .stat.warn{border-top-color:var(--warn)} body.pa .stat.bad{border-top-color:var(--bad)}
+body.pa th{background:#e9edf9;color:var(--ink)}
+body.pa tbody tr:hover{background:#f7f9ff}
+body.pa .pager a{border:1px solid var(--line);border-radius:var(--radius)}
+
+/* controls */
+body.pa .btn{border-radius:var(--radius);padding:10px 18px}
+body.pa .btn.sm{padding:5px 12px}
+body.pa .btn.ghost{color:var(--primary);box-shadow:inset 0 0 0 1.5px var(--primary)}
+body.pa input, body.pa select, body.pa textarea{border-radius:var(--radius);border-color:#b7c1de}
+body.pa .badge{border-radius:3px}
+
+/* ticket: navy stub with dashed tear line */
+body.pa .ticket{border-radius:var(--radius);border:1px solid var(--line);box-shadow:none;border-left:10px solid var(--ink)}
+body.pa .ticket-qr{background:#eef1fb;border-left:3px dashed #9aa8d4}
+
+/* event cards (browse.php) */
+body.pa .event-grid{gap:20px}
+body.pa .event-card{border-radius:var(--radius);border:1px solid var(--line);box-shadow:none}
+body.pa .event-card:hover{transform:none;border-color:var(--primary)}
+body.pa .event-cover{height:84px;border-radius:0}
+body.pa .price{color:var(--ink)}
+body.pa .event-body form{display:grid;gap:10px;margin-top:6px}
+body.pa .site-foot{color:var(--muted)}
+
+/* login / register / forgot / reset: replace the dark orange split screen */
+body.pa.theme-auth{background:#fff;--primary:#3a5bff}
+body.pa .auth-art{background:
+  linear-gradient(var(--accent),var(--accent)) 56px 0/6px 100% no-repeat,
+  repeating-linear-gradient(0deg,transparent 0 63px,#ffffff14 63px 64px),
+  var(--ink)}
+body.pa .auth-art h2{font-family:Georgia,serif;font-size:2.6rem;padding-left:28px}
+body.pa .auth-art p, body.pa .auth-art ul{padding-left:28px}
+body.pa .auth-art li{border-radius:var(--radius);border-color:#ffffff55}
+body.pa .auth-panel{background:#eef1fb}
+body.pa .auth-card{border-radius:var(--radius);box-shadow:none;border:1px solid var(--line)}
+body.pa .demo-note{background:#fff8d6;color:#6b5400;border-radius:var(--radius)}
+
+@media(max-width:860px){body.pa .auth-art h2{font-size:1.9rem}}
+@media(prefers-reduced-motion:reduce){body.pa *{transition:none!important}}
+@media print{body.pa .pillbar,body.pa .btn,body.pa .site-foot{display:none!important}}

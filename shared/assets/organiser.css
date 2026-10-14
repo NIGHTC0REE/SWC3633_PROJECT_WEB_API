@@ -1,0 +1,219 @@
+body.theme-organiser {
+  --bg: #111111;
+  --card-bg: #1c1c1e;
+  --text-main: #f5f5f7;
+  --text-muted: #a1a1a6;
+  --primary: #ec008c;
+  --accent-blue: #3b82f6;
+  --line: #2c2c2e;
+  --radius: 12px;
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Top bar: matching the magenta to cyan-blue gradient strip */
+.theme-organiser .topnav {
+  background: linear-gradient(90deg, #ec008c 0%, #0070e7 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.theme-organiser .topnav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.theme-organiser .topnav nav {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.theme-organiser .topnav nav a {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.theme-organiser .topnav nav a:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.theme-organiser .topnav nav a.active {
+  background: #000000;
+  color: #ffffff;
+}
+
+.theme-organiser .topnav-user {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+
+.theme-organiser .topnav-user {
+  font-size: 0.9rem;
+}
+
+/* Styled Sign Out pill button */
+.theme-organiser .topnav-user a {
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.theme-organiser .topnav-user a:hover {
+  background: #000000;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Banner section with dark geometric background styling */
+.theme-organiser .banner {
+  background: #18181b;
+  border-bottom: 1px solid var(--line);
+  color: #ffffff;
+}
+
+.theme-organiser .banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 44px;
+}
+
+.theme-organiser .banner small {
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+}
+
+.theme-organiser .banner h1 {
+  font-size: 2rem;
+  margin: 6px 0 2px;
+  color: #ffffff;
+}
+
+.theme-organiser .banner p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Dashboard Board & Cards */
+.theme-organiser .board {
+  max-width: 1200px;
+  margin: -22px auto 40px;
+  padding: 0 24px;
+  position: relative;
+}
+
+.theme-organiser .card,
+.theme-organiser .stat {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  color: var(--text-main);
+}
+
+.theme-organiser .stat strong {
+  color: #38bdf8;
+}
+
+.theme-organiser .table-wrap {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.theme-organiser th {
+  background: #242428;
+  color: #f5f5f7;
+  border-bottom: 1px solid var(--line);
+}
+
+.theme-organiser td {
+  border-bottom: 1px solid var(--line);
+  color: #e5e5ea;
+}
+
+/* Buttons */
+.theme-organiser .btn.ghost {
+  color: #38bdf8;
+  box-shadow: inset 0 0 0 1.5px #38bdf8;
+  background: transparent;
+}
+
+.theme-organiser .btn.ghost:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+/* Tiles & Grid */
+.theme-organiser .lane {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.theme-organiser .tile {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--text-main);
+}
+
+.theme-organiser .tile h3 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.theme-organiser .meter {
+  height: 8px;
+  border-radius: 999px;
+  background: #27272a;
+  overflow: hidden;
+}
+
+.theme-organiser .meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ec008c, #38bdf8);
+}
+
+@media (max-width: 720px) {
+  .theme-organiser .topnav-inner,
+  .theme-organiser .board,
+  .theme-organiser .banner-inner {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
