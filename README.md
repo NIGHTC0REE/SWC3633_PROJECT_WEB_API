@@ -38,3 +38,5 @@ Cross-cutting features: JWT + RBAC, request validation, centralised error handli
 
 ## Adding an endpoint
 Create `api/routes/<resource>.php` with `handle_<resource>($method, $segments)`, add the name to `RESOURCES` in `api/index.php`, and protect actions with `require_auth()` or `require_role(...)`.
+
+Video Link: https://youtu.be/88uOgXPzorU
